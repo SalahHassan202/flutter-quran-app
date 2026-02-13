@@ -22,23 +22,52 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("السور")),
-      drawer: const Drawer(
+      appBar: AppBar(
+        title: const Text(
+          "القرآن الكريم",
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1),
+        ),
+      ),
+
+      drawer: Drawer(
         child: Column(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xFF0D3B66)),
-              child: Center(
-                child: Text(
-                  "القرآن الكريم",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+            Container(
+              height: 200,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    "https://images.unsplash.com/photo-1584515933487-779824d29309",
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
+              child: Container(
+                alignment: Alignment.center,
+                // ignore: deprecated_member_use
+                color: Colors.black.withOpacity(0.6),
+                child: const Text(
+                  "القرآن الكريم",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            const ListTile(
+              leading: Icon(Icons.menu_book),
+              title: Text("السور"),
             ),
           ],
         ),
       ),
+
       body: FutureBuilder<List<SurahModel>>(
         future: surahsFuture,
         builder: (context, snapshot) {
@@ -48,22 +77,81 @@ class _HomeScreenState extends State<HomeScreen> {
 
           final surahs = snapshot.data!;
 
-          return ListView.builder(
-            padding: const EdgeInsets.all(12),
-            itemCount: surahs.length,
-            itemBuilder: (context, index) {
-              return SurahCard(
-                surah: surahs[index],
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => SurahDetailsScreen(surah: surahs[index]),
-                    ),
-                  );
-                },
-              );
-            },
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Stack(
+                    children: [
+                      SizedBox(
+                        height: size.height * 0.22,
+                        width: double.infinity,
+                        child: Image.network(
+                          "https://images.unsplash.com/photo-1609592806787-3d9aefc59f2e",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+
+                      /// Overlay
+                      Container(
+                        height: size.height * 0.22,
+                        // ignore: deprecated_member_use
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+
+                      Positioned(
+                        bottom: 20,
+                        right: 20,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: const [
+                            Text(
+                              "اقرأ وارتقِ",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 6),
+                            Text(
+                              "ابدأ رحلتك مع كتاب الله",
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              Expanded(
+                child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: surahs.length,
+                  itemBuilder: (context, index) {
+                    return SurahCard(
+                      surah: surahs[index],
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) =>
+                                SurahDetailsScreen(surah: surahs[index]),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
           );
         },
       ),
