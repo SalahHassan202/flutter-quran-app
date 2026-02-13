@@ -1,17 +1,44 @@
-# flutter_quran_app
 
-A new Flutter project.
+Clean separation of concerns for better maintainability and scalability.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Screens
 
-A few resources to get you started if this is your first Flutter project:
+- Splash Screen
+- Surah List Screen
+- Surah Details Screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter-quran-app
+## Purpose of the Project
+
+This project demonstrates:
+
+- REST API integration
+- Clean and maintainable Flutter architecture
+- Responsive UI development
+- Proper state and data handling
+- UI/UX design principles
+
+---
+
+## Future Improvements
+
+- Search functionality
+- Dark mode
+- Audio recitation support
+- Bookmark last read Ayah
+- Juz and Hizb navigation
+
+---
+
+## Contribution
+
+Feel free to fork, contribute, or suggest improvements.
+
+---
+
+## If you like this project
+
+Give it a star on GitHub
