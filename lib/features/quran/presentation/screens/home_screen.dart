@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                    "https://images.unsplash.com/photo-1584515933487-779824d29309",
+                    "https://wallpapersworld.org/wp-content/uploads/2023/06/%D8%B5%D9%88%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D9%87-%D8%B1%D9%88%D8%B9%D8%A9-8.jpg",
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 alignment: Alignment.center,
                 // ignore: deprecated_member_use
-                color: Colors.black.withOpacity(0.6),
+                color: Colors.black.withOpacity(0.1),
                 child: const Text(
                   "القرآن الكريم",
                   style: TextStyle(
@@ -89,16 +89,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: size.height * 0.22,
                         width: double.infinity,
                         child: Image.network(
-                          "https://images.unsplash.com/photo-1609592806787-3d9aefc59f2e",
+                          "https://pbs.twimg.com/media/DdePXKIVQAEPpfL.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
 
-                      /// Overlay
                       Container(
                         height: size.height * 0.22,
                         // ignore: deprecated_member_use
-                        color: Colors.black.withOpacity(0.5),
+                        color: Colors.black.withOpacity(0.1),
                       ),
 
                       Positioned(
