@@ -17,6 +17,7 @@ class AyahItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.black.withOpacity(0.05),
               blurRadius: 6,
               offset: const Offset(0, 4),
@@ -26,7 +27,6 @@ class AyahItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// رقم الآية دائري أخضر
             Container(
               width: 32,
               height: 32,
@@ -47,7 +47,6 @@ class AyahItem extends StatelessWidget {
 
             const SizedBox(width: 12),
 
-            /// نص الآية
             Expanded(
               child: Text(
                 ayah.text,
