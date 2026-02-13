@@ -27,20 +27,31 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
+          /// صورة إسلامية حقيقية واضحة
           Image.network(
-            "https://images.unsplash.com/photo-1584556812952-905ffd0c611a",
+            "https://images.unsplash.com/photo-1609592806787-3d9aefc59f2e",
             fit: BoxFit.cover,
           ),
+
           // ignore: deprecated_member_use
-          Container(color: Colors.black.withOpacity(0.6)),
+          Container(color: Colors.black.withOpacity(0.55)),
+
           const Center(
-            child: Text(
-              "القرآن الكريم",
-              style: TextStyle(
-                fontSize: 32,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "القرآن الكريم",
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 1.5,
+                  ),
+                ),
+                SizedBox(height: 16),
+                CircularProgressIndicator(color: Colors.white),
+              ],
             ),
           ),
         ],
