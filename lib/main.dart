@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quran_app/core/app_theme.dart';
+import 'features/quran/presentation/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const QuranApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class QuranApp extends StatelessWidget {
+  const QuranApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      home: const SplashScreen(),
+    );
   }
 }
