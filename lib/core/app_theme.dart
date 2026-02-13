@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    primaryColor: const Color(0xFF0D3B66),
-    scaffoldBackgroundColor: const Color(0xFFF4F6F8),
+    primaryColor: const Color(0xFF1B5E20),
+    scaffoldBackgroundColor: const Color(0xFFF8F9FA),
     fontFamily: "Roboto",
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF0D3B66),
+      backgroundColor: Color(0xFF1B5E20),
+      foregroundColor: Colors.white,
       centerTitle: true,
       elevation: 0,
     ),
